@@ -1,0 +1,4 @@
+interface:
+  display_name: "Documentation Grammar Review"
+  short_description: "Polish grammar and technical documentation"
+  default_prompt: "Use $docs-grammar-review to review this open-source documentation and explain every correction."
