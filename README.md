@@ -4,12 +4,13 @@ A [Claude Code skill](https://docs.anthropic.com/en/docs/claude-code/skills) tha
 
 ## What it does
 
-Point the skill at any piece of documentation — a README, guide, tutorial, release notes, or API reference — and it returns corrected text with brief explanations for every change. It distinguishes required grammar fixes from optional style improvements so you know what actually needs attention.
+Point the skill at any piece of documentation — a README, guide, tutorial, release notes, or API reference — and ask it to proofread, copyedit, or rewrite the prose. It preserves technical meaning and distinguishes required grammar fixes from optional style improvements.
 
 Key behaviors:
 
 - Follows the [Google developer documentation style guide](https://developers.google.com/style) and the [Microsoft Writing Style Guide](https://learn.microsoft.com/style-guide/welcome/) as its editorial baseline.
 - Respects your project's existing voice, terminology, and conventions over generic style rules.
+- Preserves conditions, exceptions, and normative terms such as `must`, `should`, and `may`.
 - Preserves Markdown structure, links, code spans, commands, and examples — it won't touch anything inside code blocks unless you ask.
 - In pull requests and feature branches, reviews only changed content rather than the entire document.
 - Flags ambiguities it can't resolve instead of guessing.
@@ -34,7 +35,7 @@ Review the grammar in README.md
 Use $docs-grammar-review to review this open-source documentation and explain every correction.
 ```
 
-For pull request reviews, the skill automatically scopes to changed files and lines. It uses the PR's target branch as the comparison base.
+For pull request reviews, the skill scopes findings to changed content while reading the surrounding logical prose unit for context. It uses the PR's target branch as the comparison base.
 
 ## Project structure
 
